@@ -1,4 +1,4 @@
-# Estruturas de dados em Java
+# Estruturas de dados em Java ☕
 Repositório responsável por implementações de diversas estruturas de dados através da utilização da linguagem Java.
 ***
 ## Interfaces básicas
@@ -6,3 +6,6 @@ Repositório responsável por implementações de diversas estruturas de dados a
 ***
 ## Estruturas de dados
 - [Pilha (com array)](src/estruturas/PilhaComArray.java)
+***
+## Testes das estruturas de dados
+- [Pilha (com array)](tests/estruturas/PilhaComArrayTest.java)
