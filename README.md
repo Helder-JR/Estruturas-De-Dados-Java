@@ -1,4 +1,4 @@
-# Estruturas De Dados Em Java
+# Estruturas de dados em Java
 Repositório responsável por implementações de diversas estruturas de dados através da utilização da linguagem Java.
 ***
 ## Interfaces básicas
