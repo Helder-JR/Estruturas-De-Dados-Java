@@ -3,10 +3,10 @@ package estruturas;
 import interfaces.Fila;
 
 /**
- * Classe que implementa a interface Fila, porém com a utilização
- * de arrays, de modo que seu tamanho é fixo a partir da criação.
+ * Classe que implementa a interface Fila, porï¿½m com a utilizaÃ§Ã£o
+ * de arrays, de modo que seu tamanho ï¿½ fixo a partir da criaÃ§Ã£o.
  * 
- * @param <T> o tipo que a fila terá.
+ * @param <T> o tipo que a fila terÃ¡.
  *
  * @author Helder Chaves Leite Junior
  * @see Fila
@@ -14,20 +14,20 @@ import interfaces.Fila;
 public class FilaComArray<T> implements Fila<T>
 {
 	/**
-	 * O array que irá armazenar a fila de elementos.
+	 * O array que irÃ¡ armazenar a fila de elementos.
 	 */
 	private T[] queue;
 	
 	/**
-	 * O inteiro que representa o índice do fim da fila.
+	 * O inteiro que representa o Ã­ndice do fim da fila.
 	 */
 	private int tail;
 	
 	/**
-	 * Método que cria uma fila com base em uma capacidade
+	 * MÃ©todo que cria uma fila com base em uma capacidade
 	 * especificada.
 	 * 
-	 * @param length a capacidade total que a fila terá.
+	 * @param length a capacidade total que a fila terï¿½.
 	 */
 	@SuppressWarnings("unchecked")
 	public FilaComArray(int length)
@@ -37,7 +37,7 @@ public class FilaComArray<T> implements Fila<T>
 	}
 	
 	/**
-	 * Método que cria uma fila com capacidade de armazenar 20
+	 * MÃ©todo que cria uma fila com capacidade de armazenar 20
 	 * elementos.
 	 */
 	public FilaComArray()

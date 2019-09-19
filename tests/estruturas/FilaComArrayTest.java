@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import interfaces.Fila;
 
 /**
- * Teste de unidade respons·vel por verificar os mÈtodos da classe
+ * Teste de unidade respons√°vel por verificar os m√©todos da classe
  * FilaComArray.
  * 
  * @author Helder Chaves Leite Junior

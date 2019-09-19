@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import interfaces.Pilha;
 
 /**
- * Teste de unidade respons·vel por verificar os mÈtodos da classe
+ * Teste de unidade respons√°vel por verificar os m√©todos da classe
  * PilhaComArray.
  * 
  * @author Helder Chaves Leite Junior

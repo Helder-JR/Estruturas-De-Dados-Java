@@ -1,27 +1,27 @@
 package interfaces;
 
 /**
- * Interface respons·vel pelas funÁıes presentes
- * em uma fila. H· o uso do generics para que a
+ * Interface respons√°vel pelas fun√ß√µes presentes
+ * em uma fila. H√° o uso do generics para que a
  * estrutura possa servir para qualquer tipo ou
  * classe.
  * 
- * @param <T> o tipo que ter· a fila.
+ * @param <T> o tipo que ter√° a fila.
  *
  * @author Helder Chaves Leite Junior
  */
 public interface Fila<T>
 {
 	/**
-	 * MÈtodo respons·vel por adicionar um elemento no fim da fila.
+	 * M√©todo respons√°vel por adicionar um elemento no fim da fila.
 	 * 
-	 * @param elemento o elemento que ser· adicionado.
+	 * @param elemento o elemento que ser√° adicionado.
 	 * @throws RuntimeException caso a fila esteja cheia.
 	 */
 	public void push(T element) throws RuntimeException;
 	
 	/**
-	 * MÈtodo respons·vel por remover um elemento do fim da fila.
+	 * M√©todo respons√°vel por remover um elemento do fim da fila.
 	 * 
 	 * @return o elemento que foi removido.
 	 * @throws RuntimeException caso a fila esteja vazia.
@@ -29,32 +29,32 @@ public interface Fila<T>
 	public T pop() throws RuntimeException;
 	
 	/**
-	 * MÈtodo que recupera o elemento do inÌcio da fila.
+	 * M√©todo que recupera o elemento do in√≠cio da fila.
 	 * 
 	 * @return o elemento do topo da pilha.
 	 */
 	public T head();
 	
 	/**
-	 * MÈtodo que recupera o tamanho atual da fila.
+	 * M√©todo que recupera o tamanho atual da fila.
 	 * 
 	 * @return um inteiro que indica o tamanho atual da fila.
 	 */
 	public int size();
 	
 	/**
-	 * MÈtodo que verifica se a fila est· vazia.
+	 * M√©todo que verifica se a fila est√° vazia.
 	 * 
 	 * @return um booleano {@code true} caso a fila esteja vazia,
-	 * ou {@code false} caso n„o esteja.
+	 * ou {@code false} caso n√£o esteja.
 	 */
 	public boolean isEmpty();
 	
 	/**
-	 * MÈtodo que verifica se a fila est· cheia.
+	 * M√©todo que verifica se a fila est√° cheia.
 	 * 
 	 * @return um booleano {@code true} caso a fila esteja cheia,
-	 * ou {@code false} caso n„o esteja.
+	 * ou {@code false} caso n√£o esteja.
 	 */
 	public boolean isFull();
 }

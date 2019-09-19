@@ -3,10 +3,10 @@ package estruturas;
 import interfaces.Pilha;
 
 /**
- * Classe que implementa a interface Pilha, porÈm com a utilizaÁ„o
- * de arrays, de modo que seu tamanho È fixo a partir da criaÁ„o.
+ * Classe que implementa a interface Pilha, por√©m com a utiliza√ß√£o
+ * de arrays, de modo que seu tamanho ÔøΩ fixo a partir da cria√ß√£o.
  * 
- * @param <T> o tipo que a pilha ter·.
+ * @param <T> o tipo que a pilha ter√°.
  *
  * @author Helder Chaves Leite Junior
  * @see Pilha
@@ -14,20 +14,20 @@ import interfaces.Pilha;
 public class PilhaComArray<T> implements Pilha<T>
 {
 	/**
-	 * O array que ir· armazenar a pilha de elementos.
+	 * O array que ir√° armazenar a pilha de elementos.
 	 */
 	private T[] stack;
 		
 	/**
-	 * O inteiro que representa o Ìndice do topo da pilha.
+	 * O inteiro que representa o √≠ndice do topo da pilha.
 	 */
 	private int top;
 	
 	/**
-	 * MÈtodo que cria uma pilha com base em uma capacidade
+	 * M√©todo que cria uma pilha com base em uma capacidade
 	 * especificada.
 	 * 
-	 * @param length a capacidade total que a pilha ter·.
+	 * @param length a capacidade total que a pilha ter√°.
 	 */
 	@SuppressWarnings("unchecked")
 	public PilhaComArray(int length)
@@ -37,7 +37,7 @@ public class PilhaComArray<T> implements Pilha<T>
 	}
 	
 	/**
-	 * MÈtodo que cria uma pilha com capacidade de armazenar 20
+	 * M√©todo que cria uma pilha com capacidade de armazenar 20
 	 * elementos.
 	 */
 	public PilhaComArray()
