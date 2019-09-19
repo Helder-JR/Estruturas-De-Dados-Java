@@ -63,7 +63,7 @@ public class FilaComArray<T> implements Fila<T>
 		
 		T removed = this.queue[0];
 		
-		for (int i = 0; i < this.size(); i++)
+		for (int i = 0; i < this.tail; i++)
 			this.queue[i] = this.queue[i + 1];
 		
 		this.tail--;
