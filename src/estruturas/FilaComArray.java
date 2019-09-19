@@ -3,8 +3,8 @@ package estruturas;
 import interfaces.Fila;
 
 /**
- * Classe que implementa a interface Fila, por�m com a utilização
- * de arrays, de modo que seu tamanho � fixo a partir da criação.
+ * Classe que implementa a interface Fila, porém com a utilização
+ * de arrays, de modo que seu tamanho é fixo a partir da criação.
  * 
  * @param <T> o tipo que a fila terá.
  *

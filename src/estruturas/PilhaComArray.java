@@ -4,7 +4,7 @@ import interfaces.Pilha;
 
 /**
  * Classe que implementa a interface Pilha, porém com a utilização
- * de arrays, de modo que seu tamanho � fixo a partir da criação.
+ * de arrays, de modo que seu tamanho é fixo a partir da criação.
  * 
  * @param <T> o tipo que a pilha terá.
  *
