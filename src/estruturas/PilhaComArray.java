@@ -13,34 +13,27 @@ import interfaces.Pilha;
  */
 public class PilhaComArray<T> implements Pilha<T>
 {
-	
 	/**
 	 * O array que irá armazenar a pilha de elementos.
 	 */
-	private T[] pilha;
-	
-	/**
-	 * A inteiro que representa a capacidade total da pilha.
-	 */
-	private int capacidade;
-	
+	private T[] stack;
+		
 	/**
 	 * O inteiro que representa o índice do topo da pilha.
 	 */
-	private int topo;
+	private int top;
 	
 	/**
 	 * Método que cria uma pilha com base em uma capacidade
 	 * especificada.
 	 * 
-	 * @param capacidade a capacidade total que a pilha terá.
+	 * @param length a capacidade total que a pilha terá.
 	 */
 	@SuppressWarnings("unchecked")
-	public PilhaComArray(int capacidade)
+	public PilhaComArray(int length)
 	{
-		this.pilha = (T[]) new Object[capacidade];
-		this.capacidade = capacidade;
-		this.topo = -1;
+		this.stack = (T[]) new Object[length];
+		this.top = -1;
 	}
 	
 	/**
@@ -53,40 +46,44 @@ public class PilhaComArray<T> implements Pilha<T>
 	}
 	
 	@Override
-	public void push(T elemento)
+	public void push(T element) throws RuntimeException
 	{
-		if (this.isFull()) throw new RuntimeException("FullStackException");
-		this.pilha[++this.topo] = elemento;
+		if (this.isFull())
+			throw new RuntimeException("FullStackException");
+		
+		this.stack[++this.top] = element;
 	}
 	
 	@Override
-	public T pop()
+	public T pop() throws RuntimeException
 	{
-		if (this.isEmpty()) throw new RuntimeException("EmptyStackException");
-		return this.pilha[this.topo--];
+		if (this.isEmpty())
+			throw new RuntimeException("EmptyStackException");
+		
+		return this.stack[this.top--];
 	}
 
 	@Override
 	public T peek()
 	{
-		return this.pilha[this.topo];
+		return this.stack[this.top];
 	}
 
 	@Override
 	public int size()
 	{
-		return this.topo + 1;
+		return this.top + 1;
 	}
 	
 	@Override
 	public boolean isEmpty()
 	{
-		return this.topo == -1;
+		return this.top == -1;
 	}
 
 	@Override
 	public boolean isFull()
 	{
-		return this.topo == (this.capacidade - 1);
+		return this.top == (this.stack.length - 1);
 	}
 }

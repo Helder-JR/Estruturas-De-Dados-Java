@@ -16,37 +16,37 @@ import interfaces.Pilha;
  */
 class PilhaComArrayTest
 {
-	private Pilha<Integer> pilha;
+	private Pilha<Integer> stack;
 	
 	@BeforeEach
 	void criaPilhaComArray()
 	{
-		this.pilha = new PilhaComArray<>();
+		this.stack = new PilhaComArray<>();
 	}
 	
 	@Test
 	void testNovaPilha()
 	{
-		assertNotNull(this.pilha);
-		assertTrue(this.pilha.isEmpty());
+		assertNotNull(this.stack);
+		assertTrue(this.stack.isEmpty());
 	}
 	
 	@Test
 	void testAdicionarElementos()
 	{
-		this.pilha.push(32);
-		this.pilha.push(16);
-		assertFalse(this.pilha.isEmpty());
-		assertEquals(this.pilha.peek(), 16);
+		this.stack.push(32);
+		this.stack.push(16);
+		assertFalse(this.stack.isEmpty());
+		assertEquals(this.stack.peek(), 16);
 	}
 	
 	@Test
 	void testRemoverElementos()
 	{
-		this.pilha.push(49);
-		assertFalse(this.pilha.isEmpty());
-		this.pilha.pop();
-		assertTrue(this.pilha.isEmpty());
+		this.stack.push(49);
+		assertFalse(this.stack.isEmpty());
+		this.stack.pop();
+		assertTrue(this.stack.isEmpty());
 	}
 	
 	@Test
@@ -82,27 +82,27 @@ class PilhaComArrayTest
 	@Test
 	void testTamanhoPilha()
 	{
-		this.pilha.push(58);
-		this.pilha.push(291);
-		this.pilha.push(-25);
-		assertEquals(this.pilha.size(), 3);
+		this.stack.push(58);
+		this.stack.push(291);
+		this.stack.push(-25);
+		assertEquals(this.stack.size(), 3);
 	}
 	
 	@Test
 	void testAdicionaElementoAposRemocao()
 	{
-		this.pilha.push(33);
-		this.pilha.push(56);
-		this.pilha.pop();
-		this.pilha.push(14);
-		assertEquals(this.pilha.peek(), 14);
+		this.stack.push(33);
+		this.stack.push(56);
+		this.stack.pop();
+		this.stack.push(14);
+		assertEquals(this.stack.peek(), 14);
 	}
 	
 	@Test
 	void testElementoRemovido()
 	{
-		this.pilha.push(78);
-		this.pilha.push(-65);
-		assertEquals(this.pilha.pop(), -65);
+		this.stack.push(78);
+		this.stack.push(-65);
+		assertEquals(this.stack.pop(), -65);
 	}
 }
