@@ -66,6 +66,9 @@ public class PilhaComArray<T> implements Pilha<T>
 	@Override
 	public T peek()
 	{
+		if (this.isEmpty())
+			return null;
+		
 		return this.stack[this.top];
 	}
 
