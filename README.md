@@ -4,6 +4,7 @@ Repositório responsável por implementações de diversas estruturas de dados a
 ## Interfaces básicas
 - [Fila](src/interfaces/Fila.java)
 - [Pilha](src/interfaces/Pilha.java)
+- [Lista](src/interfaces/Lista.java)
 ***
 ## Estruturas de dados
 - [Fila (com array)](src/estruturas/FilaComArray.java)
