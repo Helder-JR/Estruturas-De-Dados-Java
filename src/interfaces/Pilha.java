@@ -1,9 +1,8 @@
 package interfaces;
 
 /**
- * Interface responsável pelas funções presentes
- * em uma pilha. Há o uso do generics para que a
- * estrutura possa servir para qualquer tipo ou
+ * Interface responsável pelas funções presentes em uma pilha. Há o uso do
+ * generics para que a estrutura possa servir para qualquer tipo ou
  * classe.
  * 
  * @param <T> o tipo que terá a pilha.
@@ -18,7 +17,7 @@ public interface Pilha<T>
 	 * @param elemento o elemento que será adicionado.
 	 * @throws RuntimeException caso a pilha esteja cheia.
 	 */
-	public void push(T element) throws RuntimeException;
+	public void push(T element);
 	
 	/**
 	 * Método responsável por remover um elemento do topo da pilha.
@@ -29,14 +28,14 @@ public interface Pilha<T>
 	public T pop();
 	
 	/**
-	 * Método que recupera o elemento do topo da pilha.
+	 * Método que retorna o elemento do topo da pilha.
 	 * 
 	 * @return o elemento do topo da pilha.
 	 */
 	public T peek();
 	
 	/**
-	 * Método que recupera o tamanho atual da pilha.
+	 * Método que retorna o tamanho atual da pilha.
 	 * 
 	 * @return um inteiro que indica o tamanho atual da pilha.
 	 */
@@ -46,7 +45,7 @@ public interface Pilha<T>
 	 * Método que verifica se a pilha está vazia.
 	 * 
 	 * @return um booleano {@code true} caso a pilha esteja vazia,
-	 * ou {@code false} caso não esteja.
+	 *         ou {@code false} caso não esteja.
 	 */
 	public boolean isEmpty();
 	
@@ -54,7 +53,7 @@ public interface Pilha<T>
 	 * Método que verifica se a pilha está cheia.
 	 * 
 	 * @return um booleano {@code true} caso a pilha esteja cheia,
-	 * ou {@code false} caso não esteja.
+	 *         ou {@code false} caso não esteja.
 	 */
 	public boolean isFull();
 }

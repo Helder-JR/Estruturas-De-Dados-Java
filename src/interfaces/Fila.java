@@ -1,10 +1,8 @@
 package interfaces;
 
 /**
- * Interface responsável pelas funções presentes
- * em uma fila. Há o uso do generics para que a
- * estrutura possa servir para qualquer tipo ou
- * classe.
+ * Interface responsável pelas funções presentes em uma fila. Há o uso do
+ * generics para que a estrutura possa servir para qualquer tipo ou classe.
  * 
  * @param <T> o tipo que terá a fila.
  *
@@ -18,7 +16,7 @@ public interface Fila<T>
 	 * @param elemento o elemento que será adicionado.
 	 * @throws RuntimeException caso a fila esteja cheia.
 	 */
-	public void push(T element) throws RuntimeException;
+	public void push(T element);
 	
 	/**
 	 * Método responsável por remover um elemento do fim da fila.
@@ -26,17 +24,17 @@ public interface Fila<T>
 	 * @return o elemento que foi removido.
 	 * @throws RuntimeException caso a fila esteja vazia.
 	 */
-	public T pop() throws RuntimeException;
+	public T pop();
 	
 	/**
-	 * Método que recupera o elemento do início da fila.
+	 * Método que retorna o elemento do início da fila.
 	 * 
 	 * @return o elemento do topo da pilha.
 	 */
 	public T head();
 	
 	/**
-	 * Método que recupera o tamanho atual da fila.
+	 * Método que retorna o tamanho atual da fila.
 	 * 
 	 * @return um inteiro que indica o tamanho atual da fila.
 	 */
@@ -46,7 +44,7 @@ public interface Fila<T>
 	 * Método que verifica se a fila está vazia.
 	 * 
 	 * @return um booleano {@code true} caso a fila esteja vazia,
-	 * ou {@code false} caso não esteja.
+	 *         ou {@code false} caso não esteja.
 	 */
 	public boolean isEmpty();
 	
@@ -54,7 +52,7 @@ public interface Fila<T>
 	 * Método que verifica se a fila está cheia.
 	 * 
 	 * @return um booleano {@code true} caso a fila esteja cheia,
-	 * ou {@code false} caso não esteja.
+	 *         ou {@code false} caso não esteja.
 	 */
 	public boolean isFull();
 }
