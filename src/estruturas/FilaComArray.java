@@ -24,7 +24,7 @@ public class FilaComArray<T> implements Fila<T>
 	private int tail;
 	
 	/**
-	 * Capacidade padrão que a fila terá caso não seja especificada no construtor.
+	 * A constante que representa a capacidade padrão da lista.
 	 */
 	private static final int DEFAULT_CAPACITY = 20;
 	
@@ -46,7 +46,7 @@ public class FilaComArray<T> implements Fila<T>
 	}
 	
 	/**
-	 * Método que cria uma fila com capacidade de armazenar 20 elementos.
+	 * Método que cria uma fila com a capacidade padrão.
 	 */
 	public FilaComArray()
 	{
