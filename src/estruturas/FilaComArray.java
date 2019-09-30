@@ -40,11 +40,10 @@ public class FilaComArray<T> implements Fila<T>
 	{
 		if (length <= 0)
 			throw new IllegalArgumentException("Illegal Capacity: " + length);
-		else
-		{
-			this.queue = (T[]) new Object[length];
-			this.tail = -1;
-		}
+		
+		this.queue = (T[]) new Object[length];
+		this.tail = -1;
+		
 	}
 	
 	/**
