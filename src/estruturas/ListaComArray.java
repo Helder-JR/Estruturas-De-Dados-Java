@@ -68,6 +68,8 @@ public class ListaComArray<T> implements Lista<T>
 				this.shiftRight(index);
 				this.list[index] = element;
 			}
+			
+			this.size++;
 		}
 	}
 
