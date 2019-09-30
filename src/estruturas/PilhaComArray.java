@@ -57,10 +57,13 @@ public class PilhaComArray<T> implements Pilha<T>
 	@Override
 	public void push(T element) throws RuntimeException
 	{
-		if (this.isFull())
-			throw new RuntimeException("FullStackException");
-		
-		this.stack[++this.top] = element;
+		if (element != null)
+		{
+			if (this.isFull())
+				throw new RuntimeException("FullStackException");
+			
+			this.stack[++this.top] = element;
+		}
 	}
 	
 	@Override
