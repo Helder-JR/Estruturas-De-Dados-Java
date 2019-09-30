@@ -3,8 +3,8 @@ package estruturas;
 import interfaces.Fila;
 
 /**
- * Classe que implementa a interface Fila, porém com a utilização
- * de arrays, de modo que seu tamanho é fixo a partir da criação.
+ * Classe que implementa a interface Fila, porém com a utilização de arrays, de
+ * modo que seu tamanho é fixo a partir da criação.
  * 
  * @param <T> o tipo que a fila terá.
  *
@@ -24,8 +24,7 @@ public class FilaComArray<T> implements Fila<T>
 	private int tail;
 	
 	/**
-	 * Capacidade padrão que a fila terá caso não seja especificada
-	 * no construtor.
+	 * Capacidade padrão que a fila terá caso não seja especificada no construtor.
 	 */
 	private static final int DEFAULT_CAPACITY = 20;
 	
@@ -33,8 +32,8 @@ public class FilaComArray<T> implements Fila<T>
 	 * Método que cria uma fila com base em uma capacidade especificada.
 	 * 
 	 * @param length a capacidade total que a fila terá.
-	 * @throws IllegalArgumentException caso a capacidade especificada não
-	 *                                  seja válida.
+	 * @throws IllegalArgumentException caso a capacidade especificada não seja
+	 *                                  válida.
 	 */
 	@SuppressWarnings("unchecked")
 	public FilaComArray(int length)
