@@ -3,8 +3,8 @@ package estruturas;
 import interfaces.Pilha;
 
 /**
- * Classe que implementa a interface Pilha, porém com a utilização
- * de arrays, de modo que seu tamanho é fixo a partir da criação.
+ * Classe que implementa a interface Pilha, porém com a utilização de arrays,
+ * de modo que seu tamanho é fixo a partir da criação.
  * 
  * @param <T> o tipo que a pilha terá.
  *
@@ -24,25 +24,34 @@ public class PilhaComArray<T> implements Pilha<T>
 	private int top;
 	
 	/**
-	 * Método que cria uma pilha com base em uma capacidade
-	 * especificada.
+	 * Capacidade padrão que a pilha terá caso não seja especificada no construtor.
+	 */
+	private static final int DEFAULT_CAPACITY = 20;
+	
+	/**
+	 * Método que cria uma pilha com base em uma capacidade especificada.
 	 * 
 	 * @param length a capacidade total que a pilha terá.
+	 * @throws IllegalArgumentException caso a capacidade especificada não seja
+	 *                                  válida.
 	 */
 	@SuppressWarnings("unchecked")
-	public PilhaComArray(int length)
+	public PilhaComArray(int length) throws IllegalArgumentException
 	{
+		if (length <= 0)
+			throw new IllegalArgumentException("Illegal Capacity: " + length);
+		
 		this.stack = (T[]) new Object[length];
 		this.top = -1;
 	}
 	
 	/**
-	 * Método que cria uma pilha com capacidade de armazenar 20
-	 * elementos.
+	 * Método que cria uma pilha com capacidade de armazenar a quantidade padrão
+	 * de elementos.
 	 */
 	public PilhaComArray()
 	{
-		this(20);
+		this(DEFAULT_CAPACITY);
 	}
 	
 	@Override
