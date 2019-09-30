@@ -24,6 +24,12 @@ public class FilaComArray<T> implements Fila<T>
 	private int tail;
 	
 	/**
+	 * Capacidade padrão que a fila terá caso não seja especificada
+	 * no construtor.
+	 */
+	private static final int DEFAULT_CAPACITY = 20;
+	
+	/**
 	 * Método que cria uma fila com base em uma capacidade
 	 * especificada.
 	 * 
@@ -32,8 +38,13 @@ public class FilaComArray<T> implements Fila<T>
 	@SuppressWarnings("unchecked")
 	public FilaComArray(int length)
 	{
-		this.queue = (T[]) new Object[length];
-		this.tail = -1;
+		if (length <= 0)
+			throw new IllegalArgumentException("Illegal Capacity: " + length);
+		else
+		{
+			this.queue = (T[]) new Object[length];
+			this.tail = -1;
+		}
 	}
 	
 	/**
@@ -42,7 +53,7 @@ public class FilaComArray<T> implements Fila<T>
 	 */
 	public FilaComArray()
 	{
-		this(20);
+		this(DEFAULT_CAPACITY);
 	}
 	
 	@Override
