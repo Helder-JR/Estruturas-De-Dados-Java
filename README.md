@@ -9,6 +9,7 @@ Repositório responsável por implementações de diversas estruturas de dados a
 ## Estruturas de dados
 - [Fila (com array)](src/estruturas/FilaComArray.java)
 - [Pilha (com array)](src/estruturas/PilhaComArray.java)
+- [Lista (com array)](src/estruturas/ListaComArray.java)
 ***
 ## Testes de unidade das estruturas de dados
 - [Fila (com array)](tests/estruturas/FilaComArrayTest.java)
