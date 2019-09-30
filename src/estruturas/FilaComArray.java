@@ -43,7 +43,6 @@ public class FilaComArray<T> implements Fila<T>
 		
 		this.queue = (T[]) new Object[length];
 		this.tail = -1;
-		
 	}
 	
 	/**
