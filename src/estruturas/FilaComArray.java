@@ -30,10 +30,11 @@ public class FilaComArray<T> implements Fila<T>
 	private static final int DEFAULT_CAPACITY = 20;
 	
 	/**
-	 * Método que cria uma fila com base em uma capacidade
-	 * especificada.
+	 * Método que cria uma fila com base em uma capacidade especificada.
 	 * 
-	 * @param length a capacidade total que a fila ter�.
+	 * @param length a capacidade total que a fila terá.
+	 * @throws IllegalArgumentException caso a capacidade especificada não
+	 *                                  seja válida.
 	 */
 	@SuppressWarnings("unchecked")
 	public FilaComArray(int length)
@@ -46,8 +47,7 @@ public class FilaComArray<T> implements Fila<T>
 	}
 	
 	/**
-	 * Método que cria uma fila com capacidade de armazenar 20
-	 * elementos.
+	 * Método que cria uma fila com capacidade de armazenar 20 elementos.
 	 */
 	public FilaComArray()
 	{
