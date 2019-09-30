@@ -36,7 +36,7 @@ public class FilaComArray<T> implements Fila<T>
 	 *                                  válida.
 	 */
 	@SuppressWarnings("unchecked")
-	public FilaComArray(int length)
+	public FilaComArray(int length) throws IllegalArgumentException
 	{
 		if (length <= 0)
 			throw new IllegalArgumentException("Illegal Capacity: " + length);
