@@ -56,11 +56,13 @@ public class FilaComArray<T> implements Fila<T>
 	@Override
 	public void push(T element) throws RuntimeException
 	{
-		if (this.isFull())
-			throw new RuntimeException("FullQueueException");
-		
-		if (!element.equals(null))
+		if (element != null)
+		{
+			if (this.isFull())
+				throw new RuntimeException("FullQueueException");
+			
 			this.queue[++this.tail] = element;
+		}
 	}
 
 	@Override
