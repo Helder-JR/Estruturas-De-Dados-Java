@@ -5,7 +5,7 @@ package interfaces;
  * generics para que a estrutura possa servir para qualquer tipo ou
  * classe.
  * 
- * @param <T> o tipo que terá a fila.
+ * @param <T> o tipo que terá a lista.
  *
  * @author Helder Chaves Leite Junior
  */
