@@ -9,7 +9,7 @@ package interfaces;
  *
  * @author Helder Chaves Leite Junior
  */
-public interface Pilha<T>
+public interface Stack<T>
 {
 	/**
 	 * Método responsável por adicionar um elemento ao topo da pilha.

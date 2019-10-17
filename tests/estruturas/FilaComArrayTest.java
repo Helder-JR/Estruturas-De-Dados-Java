@@ -5,23 +5,24 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import interfaces.Fila;
+import estruturas_estaticas.ArrayQueue;
+import interfaces.Queue;
 
 /**
  * Teste de unidade responsável por verificar os métodos da classe
  * FilaComArray.
  * 
  * @author Helder Chaves Leite Junior
- * @see FilaComArray
+ * @see ArrayQueue
  */
 class FilaComArrayTest
 {
-	private Fila<Integer> queue;
+	private Queue<Integer> queue;
 	
 	@BeforeEach
 	void criaFilaComArray()
 	{
-		this.queue = new FilaComArray<>();
+		this.queue = new ArrayQueue<>();
 	}
 	
 	@Test
@@ -54,7 +55,7 @@ class FilaComArrayTest
 	{
 		try
 		{
-			Fila<Integer> fila = new FilaComArray<Integer>(2);
+			Queue<Integer> fila = new ArrayQueue<Integer>(2);
 			fila.push(23);
 			fila.push(31);
 			fila.push(9);
@@ -70,7 +71,7 @@ class FilaComArrayTest
 	{
 		try
 		{
-			Fila<Integer> fila = new FilaComArray<Integer>(2);
+			Queue<Integer> fila = new ArrayQueue<Integer>(2);
 			fila.pop();
 		}
 		catch (RuntimeException re)

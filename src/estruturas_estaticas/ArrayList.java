@@ -1,6 +1,6 @@
-package estruturas;
+package estruturas_estaticas;
 
-import interfaces.Lista;
+import interfaces.List;
 
 /**
  * Classe que implementa a interface Lista, porém com a utilização de arrays,
@@ -9,9 +9,9 @@ import interfaces.Lista;
  * @param <T> o tipo que a lista terá.
  *
  * @author Helder Chaves Leite Junior
- * @see Lista
+ * @see List
  */
-public class ListaComArray<T> implements Lista<T>
+public class ArrayList<T> implements List<T>
 {
 	/**
 	 * O array que irá armazenar a lista de elementos.
@@ -36,7 +36,7 @@ public class ListaComArray<T> implements Lista<T>
 	 *                                  válida.
 	 */
 	@SuppressWarnings("unchecked")
-	public ListaComArray(int length) throws IllegalArgumentException
+	public ArrayList(int length) throws IllegalArgumentException
 	{
 		if (length <= 0)
 			throw new IllegalArgumentException("Illegal capacity " + length);
@@ -45,7 +45,7 @@ public class ListaComArray<T> implements Lista<T>
 		this.size = 0;
 	}
 
-	public ListaComArray()
+	public ArrayList()
 	{
 		this(DEFAULT_CAPACITY);
 	}

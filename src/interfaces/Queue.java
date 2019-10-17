@@ -8,7 +8,7 @@ package interfaces;
  *
  * @author Helder Chaves Leite Junior
  */
-public interface Fila<T>
+public interface Queue<T>
 {
 	/**
 	 * Método responsável por adicionar um elemento no fim da fila.

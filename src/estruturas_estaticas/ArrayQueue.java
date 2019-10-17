@@ -1,6 +1,6 @@
-package estruturas;
+package estruturas_estaticas;
 
-import interfaces.Fila;
+import interfaces.Queue;
 
 /**
  * Classe que implementa a interface Fila, porém com a utilização de arrays, de
@@ -9,9 +9,9 @@ import interfaces.Fila;
  * @param <T> o tipo que a fila terá.
  *
  * @author Helder Chaves Leite Junior
- * @see Fila
+ * @see Queue
  */
-public class FilaComArray<T> implements Fila<T>
+public class ArrayQueue<T> implements Queue<T>
 {
 	/**
 	 * O array que irá armazenar a fila de elementos.
@@ -36,7 +36,7 @@ public class FilaComArray<T> implements Fila<T>
 	 *                                  válida.
 	 */
 	@SuppressWarnings("unchecked")
-	public FilaComArray(int length) throws IllegalArgumentException
+	public ArrayQueue(int length) throws IllegalArgumentException
 	{
 		if (length <= 0)
 			throw new IllegalArgumentException("Illegal Capacity: " + length);
@@ -48,7 +48,7 @@ public class FilaComArray<T> implements Fila<T>
 	/**
 	 * Método que cria uma fila com a capacidade padrão.
 	 */
-	public FilaComArray()
+	public ArrayQueue()
 	{
 		this(DEFAULT_CAPACITY);
 	}

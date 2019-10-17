@@ -1,6 +1,6 @@
-package estruturas;
+package estruturas_estaticas;
 
-import interfaces.Pilha;
+import interfaces.Stack;
 
 /**
  * Classe que implementa a interface Pilha, porém com a utilização de arrays,
@@ -9,9 +9,9 @@ import interfaces.Pilha;
  * @param <T> o tipo que a pilha terá.
  *
  * @author Helder Chaves Leite Junior
- * @see Pilha
+ * @see Stack
  */
-public class PilhaComArray<T> implements Pilha<T>
+public class ArrayStack<T> implements Stack<T>
 {
 	/**
 	 * O array que irá armazenar a pilha de elementos.
@@ -36,7 +36,7 @@ public class PilhaComArray<T> implements Pilha<T>
 	 *                                  válida.
 	 */
 	@SuppressWarnings("unchecked")
-	public PilhaComArray(int length) throws IllegalArgumentException
+	public ArrayStack(int length) throws IllegalArgumentException
 	{
 		if (length <= 0)
 			throw new IllegalArgumentException("Illegal Capacity: " + length);
@@ -49,7 +49,7 @@ public class PilhaComArray<T> implements Pilha<T>
 	 * Método que cria uma pilha com capacidade de armazenar a quantidade padrão
 	 * de elementos.
 	 */
-	public PilhaComArray()
+	public ArrayStack()
 	{
 		this(DEFAULT_CAPACITY);
 	}

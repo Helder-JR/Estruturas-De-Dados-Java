@@ -9,7 +9,7 @@ package interfaces;
  *
  * @author Helder Chaves Leite Junior
  */
-public interface Lista<T>
+public interface List<T>
 {
 	/**
 	 * Método responsável por adicionar um elemento no início da lista.

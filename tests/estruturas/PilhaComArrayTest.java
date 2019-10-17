@@ -5,23 +5,24 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import interfaces.Pilha;
+import estruturas_estaticas.ArrayStack;
+import interfaces.Stack;
 
 /**
  * Teste de unidade responsável por verificar os métodos da classe
  * PilhaComArray.
  * 
  * @author Helder Chaves Leite Junior
- * @see PilhaComArray
+ * @see ArrayStack
  */
 class PilhaComArrayTest
 {
-	private Pilha<Integer> stack;
+	private Stack<Integer> stack;
 	
 	@BeforeEach
 	void criaPilhaComArray()
 	{
-		this.stack = new PilhaComArray<>();
+		this.stack = new ArrayStack<>();
 	}
 	
 	@Test
@@ -54,7 +55,7 @@ class PilhaComArrayTest
 	{
 		try
 		{
-			Pilha<Integer> pilha = new PilhaComArray<Integer>(2);
+			Stack<Integer> pilha = new ArrayStack<Integer>(2);
 			pilha.push(23);
 			pilha.push(31);
 			pilha.push(9);
@@ -70,7 +71,7 @@ class PilhaComArrayTest
 	{
 		try
 		{
-			Pilha<Integer> pilha = new PilhaComArray<Integer>(2);
+			Stack<Integer> pilha = new ArrayStack<Integer>(2);
 			pilha.pop();
 		}
 		catch (RuntimeException re)
