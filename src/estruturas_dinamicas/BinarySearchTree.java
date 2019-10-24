@@ -141,7 +141,6 @@ public class BinarySearchTree<T extends Comparable<T>> implements Tree<T>
 	{
 		
 	}
-
 }
 
 class TreeNode<T>
@@ -154,6 +153,7 @@ class TreeNode<T>
 	TreeNode(T data)
 	{
 		this.data = data;
+	}
 	
 	boolean isEmpty()
 	{
