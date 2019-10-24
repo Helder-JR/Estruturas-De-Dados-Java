@@ -21,4 +21,4 @@ Repositório responsável por implementações de diversas estruturas de dados a
 - [Pilha (com array)](tests/estruturas_estaticas/PilhaComArrayTest.java)
 
 ## Testes de unidade das estruturas de dados dinâmicas
-- [Árvore binária de busca](tests/estruturas_dinamicas/BinarySearchTree.java)
+- [Árvore binária de busca](tests/estruturas_dinamicas/BinarySearchTreeTest.java)
