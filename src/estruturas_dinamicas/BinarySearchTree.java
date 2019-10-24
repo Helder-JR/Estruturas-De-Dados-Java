@@ -172,7 +172,7 @@ class TreeNode<T>
 	
 	boolean hasDegreeOne()
 	{
-		return !this.left.isEmpty() ^ !this.right.isEmpty();
+		return this.left.isEmpty() ^ this.right.isEmpty();
 	}
 	
 	boolean hasDegreeTwo()
