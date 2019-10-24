@@ -4,7 +4,7 @@ import interfaces.Tree;
 
 public class BinarySearchTree<T extends Comparable<T>> implements Tree<T>
 {
-	private TreeNode root;
+	private TreeNode<T> root;
 
 	public BinarySearchTree()
 	{
@@ -20,146 +20,180 @@ public class BinarySearchTree<T extends Comparable<T>> implements Tree<T>
 	@Override
 	public int size()
 	{
-		// TODO Auto-generated method stub
-		return 0;
+		return this.size(this.root);
+	}
+
+	private int size(TreeNode<T> node)
+	{
+		if (node.isEmpty())
+			return 0;
+		
+		return 1 + this.size(node.left) + this.size(node.right);
 	}
 
 	@Override
 	public int height()
 	{
-		// TODO Auto-generated method stub
-		return 0;
+		return this.height(this.root);
+	}
+
+	private int height(TreeNode<T> node)
+	{
+		if (node.isEmpty())
+			return -1;
+		
+		return 1 + Math.max(this.height(node.left), this.height(node.right));
 	}
 
 	@Override
 	public void insert(T element)
 	{
 		if (element != null)
+			this.insert(element, this.root, null);
+	}
+
+	private void insert(T element, TreeNode<T> node, TreeNode<T> nodeParent)
+	{
+		if (node.isEmpty())
 		{
-			TreeNode newNode = new TreeNode(element);
-			
-			if (this.isEmpty())
-				this.root = newNode;
-			else
-			{
-				TreeNode auxiliar = this.root;
-				
-				while (auxiliar != null)
-				{
-					if (newNode.data.compareTo(auxiliar.data) < 0)
-					{
-						if (auxiliar.left == null)
-						{
-							auxiliar.left = newNode;
-							newNode.parent = auxiliar;
-							break;
-						}
-						else
-							auxiliar = auxiliar.left;
-					}
-					else if (newNode.data.compareTo(auxiliar.data) > 0)
-					{
-						if (auxiliar.right == null)
-						{
-							auxiliar.right = newNode;
-							newNode.parent = auxiliar;
-							break;
-						}
-						else
-							auxiliar = auxiliar.right;
-					}
-				}
-			}
+			node = new TreeNode<T>(element);
+			node.parent = nodeParent;
 		}
+		else if (element.compareTo(node.data) < 0)
+			this.insert(element, node.left, node);
+		else if (element.compareTo(node.data) > 0)
+			this.insert(element, node.right, node);
 	}
 
 	@Override
 	public void remove(T element)
 	{
-		if (element != null && !this.isEmpty())
-		{
-			
-		}
+		
 	}
 
-	public TreeNode search(T element)
+	public TreeNode<T> search(T element)
 	{
-		TreeNode auxiliar = this.root;
-		
-		if (element != null)
-		{
-			while (auxiliar != null)
-			{
-				if (element.compareTo(auxiliar.data) < 0)
-					auxiliar = auxiliar.left;
-				else if (element.compareTo(auxiliar.data) > 0)
-					auxiliar = auxiliar.right;
-				else
-					return auxiliar;
-			}
-		}
-		
-		return auxiliar;
+		return this.search(element, this.root);
 	}
 
-	public TreeNode minimum()
+	private TreeNode<T> search(T element, TreeNode<T> node)
 	{
-		TreeNode auxiliar = this.root;
+		if (node.isEmpty() || element == null)
+			return null;
 		
-		while (auxiliar.left != null)
-			auxiliar = auxiliar.left;
-		
-		return auxiliar;
+		if (node.data.compareTo(element) == 0)
+			return node;
+		else if (node.data.compareTo(element) < 0)
+			return this.search(element, node.left);
+		else
+			return this.search(element, node.right);
 	}
 
-	public TreeNode maximum()
+	public TreeNode<T> minimum()
 	{
-		TreeNode auxiliar = this.root;
+		if (this.root.isEmpty())
+			return null;
 		
-		while (auxiliar.right != null)
-			auxiliar = auxiliar.right;
+		return this.minimum(this.root);
+	}
+
+	private TreeNode<T> minimum(TreeNode<T> node)
+	{
+		if (node.left.isEmpty())
+			return node;
 		
-		return auxiliar;
+		return this.minimum(node.left);
+	}
+
+	public TreeNode<T> maximum()
+	{
+		if (this.root.isEmpty())
+			return null;
+		
+		return this.maximum(this.root);
+	}
+
+	private TreeNode<T> maximum(TreeNode<T> node)
+	{
+		if (node.right.isEmpty())
+			return node;
+		
+		return this.maximum(node.right);
 	}
 
 	@Override
 	public int countLeaves()
 	{
-		// TODO Auto-generated method stub
-		return 0;
+		
 	}
 
-	@Override
 	public T[] preOrder()
 	{
-		// TODO Auto-generated method stub
-
+		
 	}
 
-	@Override
 	public T[] inOrder()
 	{
-		// TODO Auto-generated method stub
-
+		
 	}
 
-	@Override
 	public T[] posOrder()
 	{
-		// TODO Auto-generated method stub
-
+		
 	}
 
-	class TreeNode
-	{
-		TreeNode parent;
-		TreeNode left;
-		TreeNode right;
-		T data;
+}
 
-		TreeNode(T data)
+class TreeNode<T>
+{
+	TreeNode<T> parent;
+	TreeNode<T> left;
+	TreeNode<T> right;
+	T data;
+	
+	TreeNode(T data)
+	{
+		this.data = data;
+	
+	boolean isEmpty()
+	{
+		return this == null;
+	}
+	
+	boolean hasParent()
+	{
+		return !this.parent.isEmpty();
+	}
+	
+	boolean hasDegreeZero()
+	{
+		return this.left.isEmpty() && this.right.isEmpty();
+	}
+	
+	boolean hasDegreeOne()
+	{
+		return !this.left.isEmpty() ^ !this.right.isEmpty();
+	}
+	
+	boolean hasDegreeTwo()
+	{
+		return !this.left.isEmpty() && !this.right.isEmpty();
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public boolean equals(Object obj)
+	{
+		boolean result = false;
+		
+		if (obj instanceof TreeNode)
 		{
-			this.data = data;
+			if (!this.isEmpty() && !((TreeNode<T>) obj).isEmpty())
+				result = this.data.equals(((TreeNode<T>) obj).data);
+			else
+				result = this.isEmpty() && ((TreeNode<T>) obj).isEmpty();
 		}
+		
+		return result;
 	}
 }

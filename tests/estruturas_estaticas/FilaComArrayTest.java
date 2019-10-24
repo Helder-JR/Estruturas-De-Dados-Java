@@ -1,4 +1,4 @@
-package estruturas;
+package estruturas_estaticas;
 
 import static org.junit.jupiter.api.Assertions.*;
 
