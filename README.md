@@ -2,15 +2,16 @@
 Repositório responsável por implementações de diversas estruturas de dados através da utilização da linguagem Java.
 ***
 ## Interfaces básicas
-- [Fila](src/interfaces_estaticas/Fila.java)
-- [Pilha](src/interfaces_estaticas/Pilha.java)
-- [Lista](src/interfaces_estaticas/Lista.java)
-- [Árvore](src/interfaces_dinamicas/Lista.java)
+- [Árvore](src/interfaces/Tree.java)
+- [Fila](src/interfaces/Queue.java)
+- [Lista](src/interfaces/List.java)
+- [Pilha](src/interfaces/Stack.java)
+
 ***
 ## Estruturas de dados estáticas
-- [Fila (com array)](src/estruturas_estaticas/FilaComArray.java)
-- [Pilha (com array)](src/estruturas_estaticas/PilhaComArray.java)
-- [Lista (com array)](src/estruturas_estaticas/ListaComArray.java)
+- [Fila (com array)](src/estruturas_estaticas/ArrayQueue.java)
+- [Pilha (com array)](src/estruturas_estaticas/ArrayStack.java)
+- [Lista (com array)](src/estruturas_estaticas/ArrayList.java)
 
 ## Estruturas de dados dinâmicas
 - [Árvore binária de busca](src/estruturas_dinamicas/BinarySearchTree.java)
