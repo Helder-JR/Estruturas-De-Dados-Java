@@ -5,12 +5,19 @@ Repositório responsável por implementações de diversas estruturas de dados a
 - [Fila](src/interfaces/Fila.java)
 - [Pilha](src/interfaces/Pilha.java)
 - [Lista](src/interfaces/Lista.java)
+- [Árvore](src/interfaces/Lista.java)
 ***
-## Estruturas de dados
-- [Fila (com array)](src/estruturas/FilaComArray.java)
-- [Pilha (com array)](src/estruturas/PilhaComArray.java)
-- [Lista (com array)](src/estruturas/ListaComArray.java)
+## Estruturas de dados estáticas
+- [Fila (com array)](src/estruturas_estaticas/FilaComArray.java)
+- [Pilha (com array)](src/estruturas_estaticas/PilhaComArray.java)
+- [Lista (com array)](src/estruturas_estaticas/ListaComArray.java)
+
+## Estruturas de dados dinâmicas
+- [Árvore binária de busca](src/estruturas_dinamicas/BinarySearchTree.java)
 ***
-## Testes de unidade das estruturas de dados
-- [Fila (com array)](tests/estruturas/FilaComArrayTest.java)
-- [Pilha (com array)](tests/estruturas/PilhaComArrayTest.java)
+## Testes de unidade das estruturas de dados estáticas
+- [Fila (com array)](tests/estruturas_estaticas/FilaComArrayTest.java)
+- [Pilha (com array)](tests/estruturas_estaticas/PilhaComArrayTest.java)
+
+## Testes de unidade das estruturas de dados dinâmicas
+- [Árvore binária de busca](tests/estruturas_dinamicas/BinarySearchTree.java)
