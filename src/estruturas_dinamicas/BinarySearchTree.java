@@ -1,5 +1,7 @@
 package estruturas_dinamicas;
 
+import java.util.ArrayList;
+
 import interfaces.Tree;
 
 public class BinarySearchTree<T extends Comparable<T>> implements Tree<T>
@@ -16,7 +18,7 @@ public class BinarySearchTree<T extends Comparable<T>> implements Tree<T>
 	{
 		return this.root == null;
 	}
-	
+
 	@Override
 	public int size()
 	{
@@ -124,22 +126,78 @@ public class BinarySearchTree<T extends Comparable<T>> implements Tree<T>
 	@Override
 	public int countLeaves()
 	{
-		
+		return this.countLeaves(this.root);
 	}
 
+	private int countLeaves(TreeNode<T> node)
+	{
+		if (node.isEmpty())
+			return 0;
+		
+		if (node.hasDegreeZero())
+			return 1;
+		
+		return this.countLeaves(node.left) + this.countLeaves(node.right);
+	}
+
+	@SuppressWarnings("unchecked")
 	public T[] preOrder()
 	{
+		ArrayList<T> arrayList = new ArrayList<T>();
 		
+		this.preOrder(arrayList, this.root);
+		
+		return arrayList.toArray((T[]) new Comparable[arrayList.size()]);
 	}
 
+	private void preOrder(ArrayList<T> arrayList, TreeNode<T> node)
+	{
+		if (!node.isEmpty())
+		{
+			arrayList.add(node.data);
+			this.preOrder(arrayList, node.left);
+			this.preOrder(arrayList, node.right);
+		}
+	}
+
+	@SuppressWarnings("unchecked")
 	public T[] inOrder()
 	{
+		ArrayList<T> arrayList = new ArrayList<T>();
 		
+		this.inOrder(arrayList, this.root);
+		
+		return arrayList.toArray((T[]) new Comparable[arrayList.size()]);
 	}
 
-	public T[] posOrder()
+	private void inOrder(ArrayList<T> arrayList, TreeNode<T> node)
 	{
+		if (!node.isEmpty())
+		{
+			this.preOrder(arrayList, node.left);
+			arrayList.add(node.data);
+			this.preOrder(arrayList, node.right);
+		}
+	}
+
+	@SuppressWarnings("unchecked")
+	public T[] postOrder()
+	{
+		ArrayList<T> arrayList = new ArrayList<T>();
 		
+		this.postOrder(arrayList, this.root);
+		
+		return arrayList.toArray((T[]) new Comparable[arrayList.size()]);
+	}
+
+	private void postOrder(ArrayList<T> arrayList, TreeNode<T> node)
+	{
+		if (!node.isEmpty())
+		{
+			this.preOrder(arrayList, node.left);
+			this.preOrder(arrayList, node.right);
+			arrayList.add(node.data);
+		}
 	}
 }
 
@@ -149,37 +207,37 @@ class TreeNode<T>
 	TreeNode<T> left;
 	TreeNode<T> right;
 	T data;
-	
+
 	TreeNode(T data)
 	{
 		this.data = data;
 	}
-	
+
 	boolean isEmpty()
 	{
 		return this == null;
 	}
-	
+
 	boolean hasParent()
 	{
 		return !this.parent.isEmpty();
 	}
-	
+
 	boolean hasDegreeZero()
 	{
 		return this.left.isEmpty() && this.right.isEmpty();
 	}
-	
+
 	boolean hasDegreeOne()
 	{
 		return this.left.isEmpty() ^ this.right.isEmpty();
 	}
-	
+
 	boolean hasDegreeTwo()
 	{
 		return !this.left.isEmpty() && !this.right.isEmpty();
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	@Override
 	public boolean equals(Object obj)
