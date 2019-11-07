@@ -16,7 +16,7 @@ public class BinarySearchTree<T extends Comparable<T>> implements Tree<T>
 	@Override
 	public boolean isEmpty()
 	{
-		return this.root == null;
+		return this.root.isEmpty();
 	}
 
 	@Override
